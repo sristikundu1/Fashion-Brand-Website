@@ -3,26 +3,26 @@ import Brands from "../../Components/Brands/Brands";
 import Banner from "../../Components/Header/Banner/Banner";
 import PageServices from "../../Components/PageServices/PageServices";
 import DealOfTheDay from "../../Components/DealOfTheDay/DealOfTheDay";
-// import { useState } from "react";
-// import { BsMoon, BsFillBrightnessHighFill } from "react-icons/bs";
+import { useState } from "react";
+import { BsMoon, BsFillBrightnessHighFill } from "react-icons/bs";
 
 
 const Home = () => {
     const brands = useLoaderData();
 
-    // const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // const toggleDarkMode = () => {
-    //     setIsDarkMode(!isDarkMode);
-    // };
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
 
-    // const pageStyle = {
-    //     backgroundColor: isDarkMode ? '#222' : '#fff',
-    // };
+    const pageStyle = {
+        backgroundColor: isDarkMode ? '#222' : '#fff',
+    };
     return (
-        <div>
-            {/* style={pageStyle} className=" text-black" */}
-
+        <div  style={pageStyle} className=" text-black"
+        >
+           
             <div className="relative">
                 <Banner></Banner>
                 <PageServices></PageServices>
@@ -30,12 +30,12 @@ const Home = () => {
                 <DealOfTheDay duration={2 * 24 * 60 * 60 * 1000}></DealOfTheDay>
 
 
-                {/* <button
+                <button
                     onClick={toggleDarkMode}
                     className="inline-block p-2 rounded-full hover:bg-gray-300 absolute top-[-54px] right-4"
                 >
                     {isDarkMode ? <BsFillBrightnessHighFill></BsFillBrightnessHighFill> : <BsMoon></BsMoon>}
-                </button> */}
+                </button>
 
             </div>
 
