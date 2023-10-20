@@ -52,11 +52,11 @@ const Router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: "/brandproducts",
-                // path:"/brandproducts/:brandName",
+                // path: "/brandproducts",
+                path:"/brandproducts/:brandName",
                 element: <BrandProducts></BrandProducts>,
-                // loader:({params}) => fetch(`https://new-brand-swart.vercel.app/${params.brandName}`)
-                loader: () => fetch("https://new-brand-swart.vercel.app/products")
+                loader:({params}) => fetch(`https://new-brand-swart.vercel.app/products/${params.brandName}`)
+                // loader: () => fetch("https://new-brand-swart.vercel.app/products")
             }
         ]
     }

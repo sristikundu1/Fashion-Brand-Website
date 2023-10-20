@@ -30,7 +30,7 @@ const BrandProducts = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mt-9 max-w-6xl mx-auto">
                 {
-                    products.map(product =><BrandProductsCard
+                   products.length && products?.map(product =><BrandProductsCard
                         key={product._id}
                         product={product}
                     ></BrandProductsCard>)
