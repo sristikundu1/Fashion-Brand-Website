@@ -1,9 +1,15 @@
+import Footer from "../../Components/Footer/Footer";
+import NavBar from "../../Components/Header/NavBar/NavBar";
 
 
 const ErrorPage = () => {
     return (
         <div>
-            <h2>error</h2>
+            <NavBar></NavBar>
+           <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/1JtcT7d/error.gif)' }}>
+            </div>
+            <Footer></Footer>
+
         </div>
     );
 };
