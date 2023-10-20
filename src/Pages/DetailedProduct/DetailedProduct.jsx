@@ -41,9 +41,6 @@ const DetailedProduct = () => {
 
     const handleIconClick = () => {
         const Photo = document.getElementById('photo').getAttribute('src');
-        // if (url) {
-        //     const Photo = url.getAttribute('src');
-        //   }
         const Name = document.getElementById('name').textContent;
         const BrandName = document.getElementById('brandName').textContent;
         const Price = document.getElementById('price').textContent;
@@ -56,7 +53,7 @@ const DetailedProduct = () => {
 
          //data send in the server
 
-         fetch("http://localhost:5000/wishproducts", {
+         fetch("https://new-brand-swart.vercel.app/wishproducts", {
             method: 'POST',
             headers: {
                 'content-type': "application/json"
