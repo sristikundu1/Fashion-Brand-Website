@@ -42,7 +42,7 @@ const Register = () => {
 
     }
     return (
-        <div className="w-[900px] p-14 ml-56 bg-[#DFD8CA] my-9">
+        <div className=" lg:w-[900px] p-14 lg:ml-56 bg-[#DFD8CA] my-9">
             <h2 className=" font-courgette font-bold text-xl text-[#004445] text-center my-7" style={{ textShadow: '0 0 15px rgba(0, 0, 0, 0.5)' }}>Register To ElysianWardrobe</h2>
             <form onSubmit={handleRegister}>
                 <div className="w-full flex flex-col">

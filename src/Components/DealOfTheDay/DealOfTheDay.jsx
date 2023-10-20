@@ -48,7 +48,7 @@ const DealOfTheDay = ({ duration }) => {
                 <div className=" space-y-7">
                     <h2 className="text-5xl text-[#F8B400] font-courgette mb-4">Flash Sale Extravaganza!</h2>
                     <p className="text-[#F1E3CB] font-semibold text-left text-xl mb-8">Get ready for a shopping spree like never before with our exclusive Flash Sale Extravaganza! At ElysianWardrobe, we are turning up the heat on savings with limited-time discounts that are too hot to handle. Do not miss this opportunity to score incredible deals on the latest fashion trends.</p>
-                    <div className="font-bold text-9xl mt-6 text-[#FCF8F3] text-center">
+                    <div className="text-4xl text-center md:text-8xl md:text-center lg:font-bold lg:text-9xl mt-6 text-[#FCF8F3] lg:text-center">
                         {getFormattedTime(time)}
 
                     </div>

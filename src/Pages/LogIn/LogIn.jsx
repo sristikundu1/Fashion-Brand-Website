@@ -49,7 +49,7 @@ const LogIn = () => {
                                 <label className="label">
                                     <span className="label-text font-bold text-xl text-[#CBB279]">Email</span>
                                 </label>
-                                <input type="email" placeholder="Enter Your email" name="email" className="input input-bordered w-[500px] text-black" required />
+                                <input type="email" placeholder="Enter Your email" name="email" className="lg:w-[500px]   input input-bordered  text-black" required />
                             </div>
                             <div className="form-control relative">
                                 <label className="label">
@@ -57,7 +57,7 @@ const LogIn = () => {
                                 </label>
                                 <input type={showPassword ? "text" : "password"}
                                     placeholder="Enter Your password"
-                                    className="input input-bordered w-[500px] text-black" name="password" required />
+                                    className="lg:w-[500px] input input-bordered  text-black" name="password" required />
                                 <span className='absolute top-14 right-2' onClick={() => setShowPassword(!showPassword)}>
                                     {showPassword ? <FaEyeSlash className="text-black"></FaEyeSlash> : <FaEye className="text-black"></FaEye>}
                                 </span>

@@ -28,7 +28,7 @@ const BrandProducts = () => {
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mt-9 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 ml-6 md:grid-cols-2 gap-5 md:ml-1 lg:grid-cols-2 lg:ml-48  mt-9 max-w-6xl mx-auto">
                 {
                    products.length && products?.map(product =><BrandProductsCard
                         key={product._id}

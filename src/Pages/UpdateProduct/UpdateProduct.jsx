@@ -51,55 +51,55 @@ const UpdateProduct = () => {
 
     return (
         <div>
-            <div className="card card-compact  shadow-xl bg-[#F4F3F0] p-16 mt-12 mx-44 mb-24 w-[1000px]">
+            <div className="card card-compact  shadow-xl bg-[#F4F3F0] w-96 p-5 ml-4 md:w-[700px] md:ml-8 md:p-12 lg:w-[1000px] lg:p-16 mt-12 lg:mx-44 lg:ml-54 mb-24 ">
                 <figure><img className="w-full" src="https://i.ibb.co/hgbBjhd/update.gif" alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="text-5xl text-[#004445] text-center mb-5 font-courgette" style={{ textShadow: '0 0 15px rgba(0, 0, 0, 0.5)' }}>Update Information Of:{name}</h2>
                     <form onSubmit={handleUpdateProduct}>
-                        <div className="flex gap-4  mb-3">
-                            <div className="form-control w-1/2 ">
+                        <div className="lg:flex gap-4  mb-3">
+                            <div className="form-control w-full lg:w-1/2 ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Name</span>
                                 </label>
                                 <input type="text" name="name" defaultValue={name} placeholder="Enter product name" className="input input-bordered w-full " />
                             </div>
-                            <div className="form-control w-1/2 ">
+                            <div className="form-control w-full lg:w-1/2  ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Brand Name</span>
                                 </label>
                                 <input type="text" name="brand" defaultValue={brandName} placeholder="Enter brand name " className="input input-bordered w-full" />
                             </div>
                         </div>
-                        <div className="flex gap-4 mb-3">
-                            <div className="form-control w-1/2 ">
+                        <div className="lg:flex gap-4 mb-3">
+                            <div className="form-control w-full lg:w-1/2 ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Type</span>
                                 </label>
                                 <input type="text" name="type" defaultValue={type} placeholder="Enter product type" className="input input-bordered w-full " />
                             </div>
                          
-                            <div className="form-control w-1/2 ">
+                            <div className="form-control w-full lg:w-1/2  ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Price</span>
                                 </label>
                                 <input type="text" name="price" defaultValue={price} placeholder="Enter product price" className="input input-bordered w-full" />
                             </div>
                         </div>
-                        <div className="flex gap-4 mb-3">
-                            <div className="form-control w-1/2 ">
+                        <div className="lg:flex gap-4 mb-3">
+                            <div className="form-control w-full lg:w-1/2  ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Rating</span>
                                 </label>
                                 <input type="text" name="rating" defaultValue={rating} placeholder="Enter product rating" className="input input-bordered w-full " />
                             </div>
-                            <div className="form-control w-1/2 ">
+                            <div className="form-control w-full lg:w-1/2  ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Short description</span>
                                 </label>
                                 <input type="text" name="details"  defaultValue={details} placeholder="Enter product details" className="input input-bordered w-full" />
                             </div>
                         </div>
-                        <div className="flex gap-4 mb-3">
+                        <div className="lg:flex gap-4 mb-3">
                             <div className="form-control w-full ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Photo</span>

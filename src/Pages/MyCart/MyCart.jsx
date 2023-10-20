@@ -10,7 +10,7 @@ const MyCart = () => {
     const [wishProducts, setWishProduct] = useState(loadedwishProduct);
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -51,12 +51,12 @@ const MyCart = () => {
     }
     return (
         <div>
-            <h2>mauy cart{loadedwishProduct.length}</h2>
+            {/* <h2>mauy cart{loadedwishProduct.length}</h2> */}
 
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="flex flex-col lg:table">
                     {/* head */}
-                    <thead>
+                    <thead  className="md:font-bold md:text-xl lg:font-bold text-xl">
                         <tr>
                             
                             <th>Product</th>

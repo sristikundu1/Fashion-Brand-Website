@@ -77,11 +77,11 @@ const DetailedProduct = () => {
     };
     return (
         <div>
-            <div className="grid grid-cols-5 gap-9 mt-6 ml-5 mr-5">
+            <div className="flex flex-col md:flex md:flex-col lg:grid grid-cols-5 gap-9 mt-6 ml-5 mr-5">
                 <div className="col-span-3">
                     <img id="photo" className=" w-[800px] h-full" src={photo} alt="" />
                 </div>
-                <div className=" w-[500px] space-y-4">
+                <div className=" w-[380px] ml-3 md:w-[600px] md:ml-14 lg:w-[500px] space-y-4">
                     <h2 id="name" className="text-5xl text-[#285430]  font-courgette my-6">{name}</h2>
                     <h2 className="text-2xl text-[#3D5656]  font-bold">Brand Of : <span id="brandName">{brandName}</span> </h2>
                     <p className="font-medium  text-[#E7B10A] text-xl">Price: <span id="price">{price}</span> </p>
@@ -156,16 +156,16 @@ const DetailedProduct = () => {
                         <label className="label">
                             <span className="label-text font-bold text-xl text-[#CBB279]">Review</span>
                         </label>
-                        <textarea className="border p-3  outline-none border-b-4 rounded" name="review" placeholder="Write Your Review" id="" cols="150" rows="5" required></textarea>
+                        <textarea className="w-96 md:w-[700px] lg:w-[1160px] border p-3  outline-none border-b-4 rounded" name="review" placeholder="Write Your Review" id="" cols="150" rows="5" required></textarea>
                     </div>
-                    <div className="flex gap-4  mb-3">
-                        <div className="form-control w-1/2 ">
+                    <div className="lg:flex gap-4  mb-3">
+                        <div className="form-control w-full lg:w-1/2 ">
                             <label className="label">
                                 <span className="label-text font-semibold text-xl text-[#CBB279]">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Enter your name" className=" outline-none border-b-4 input input-bordered w-full " />
                         </div>
-                        <div className="form-control w-1/2 ">
+                        <div className="form-control w-full lg:w-1/2 ">
                             <label className="label">
                                 <span className="label-text font-semibold text-xl text-[#CBB279]">Email</span>
                             </label>
@@ -178,14 +178,14 @@ const DetailedProduct = () => {
             </div>
 
             <div className="mt-16 bg-[#F9F8EB] p-5 pb-12 pt-6">
-                <div className="max-w-6xl mx-auto">
+                <div className="md:max-w-auto lg:max-w-6xl mx-auto">
                     <h2 className="text-3xl text-[#672F2F] text-center h-14 border pt-3 font-courgette mb-9 bg-[#99B19C]">Shipping & Delivery</h2>
                 </div>
-                <div className="grid grid-cols-4 gap-5 mt-6 ml-5">
+                <div className="flex flex-col ml-1 md:flex md:flex-col md:ml-3 lg:grid grid-cols-4 gap-5 mt-6 lg:ml-5">
                     <div className="col-span-2">
-                        <img className="rounded-md w-[600px] h-full" src="https://i.ibb.co/pdwTQS1/shipping.gif" alt="" />
+                        <img className="md:w-[800px] lg:rounded-md w-[600px] h-full" src="https://i.ibb.co/pdwTQS1/shipping.gif" alt="" />
                     </div>
-                    <div className="w-[620px]">
+                    <div className="md:w-auto lg:w-[620px]">
                         <h2 className="font-bold text-3xl mb-3 text-[#285430]">Seamless Shipping and Speedy Delivery for Your Convenience</h2>
                         <p>Experience the epitome of convenience with our shipping and delivery services at [Your Company Name]. We take pride in our commitment to swift, secure, and efficient shipping, ensuring that your orders reach you in a timely manner. With real-time tracking, careful packaging, and dedicated customer support, we are here to make your online shopping experience seamless. Whether you are a local or international customer, we have got you covered. Your satisfaction is our priority, and we look forward to delivering exceptional service with every order you place.</p>
 
