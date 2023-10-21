@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD1EYaSp0SyEqjSWSKPOOq3AtSGAtQsxr0",
-  authDomain: "elysian-wardrobe.firebaseapp.com",
-  projectId: "elysian-wardrobe",
-  storageBucket: "elysian-wardrobe.appspot.com",
-  messagingSenderId: "93974376497",
-  appId: "1:93974376497:web:c091bab8ea7e78b4096510"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase

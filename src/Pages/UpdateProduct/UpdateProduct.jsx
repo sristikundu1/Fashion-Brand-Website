@@ -27,14 +27,39 @@ const UpdateProduct = () => {
 
         //data send in the server
 
-        fetch(`https://new-brand-swart.vercel.app/${_id}`, {
+        // `https://new-brand-swart.vercel.app/${_id}`
+
+        // fetch(`https:/localhost:5000/products/updateproduct/${_id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': "application/json"
+        //     },
+        //     body: JSON.stringify(updateProduct)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log("Inside post response", data);
+        //         if (data.modifiedCount > 0) {
+        //             Swal.fire({
+        //                 title: 'success!',
+        //                 text: 'Product updated successfully',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Ok'
+        //             })
+        //             form.reset();
+        //         }
+        //     })
+
+        fetch(`https://new-brand-swart.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type': "application/json"
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(updateProduct)
         })
-            .then(res => res.json())
+            .then(res => {
+                return res.json()
+            })
             .then(data => {
                 console.log("Inside post response", data);
                 if (data.modifiedCount > 0) {
@@ -77,7 +102,7 @@ const UpdateProduct = () => {
                                 </label>
                                 <input type="text" name="type" defaultValue={type} placeholder="Enter product type" className="input input-bordered w-full " />
                             </div>
-                         
+
                             <div className="form-control w-full lg:w-1/2  ">
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Price</span>
@@ -96,7 +121,7 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="label-text font-semibold text-xl">Short description</span>
                                 </label>
-                                <input type="text" name="details"  defaultValue={details} placeholder="Enter product details" className="input input-bordered w-full" />
+                                <input type="text" name="details" defaultValue={details} placeholder="Enter product details" className="input input-bordered w-full" />
                             </div>
                         </div>
                         <div className="lg:flex gap-4 mb-3">

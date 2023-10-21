@@ -30,17 +30,17 @@ const Router = createBrowserRouter([
             {
                 path: "products/updateproduct/:id",
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://new-brand-swart.vercel.app/products/updateproduct/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/updateproduct/${params.id}`)
             },
             {
                 path: "products/productdetails/:id",
                 element:<PrivateRoutes><DetailedProduct></DetailedProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://new-brand-swart.vercel.app/products/productdetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/productdetails/${params.id}`)
             },
             {
                 path: "/mycart",
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch("https://new-brand-swart.vercel.app/wishproducts")
+                loader: () => fetch("https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/wishproducts")
 
             },
             {
@@ -55,7 +55,7 @@ const Router = createBrowserRouter([
                 // path: "/brandproducts",
                 path:"/brandproducts/:brandName",
                 element: <BrandProducts></BrandProducts>,
-                loader:({params}) => fetch(`https://new-brand-swart.vercel.app/products/${params.brandName}`)
+                loader:({params}) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/${params.brandName}`)
                 // loader: () => fetch("https://new-brand-swart.vercel.app/products")
             }
         ]

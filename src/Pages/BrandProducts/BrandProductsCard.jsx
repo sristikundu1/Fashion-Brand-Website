@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { BiStar } from "react-icons/bi";
 
 const BrandProductsCard = ({ product }) => {
 
@@ -19,7 +19,7 @@ const BrandProductsCard = ({ product }) => {
                         <h2>{type}</h2>
                     </div>
                     <p>{price}Taka</p>
-                    <p>Rating: {rating}</p>
+                    <p className="flex justify-center items-center gap-1">Rating: {rating} <BiStar className="text-orange-500"></BiStar> </p>
                     <div className="card-actions">
                         <Link to={`/products/productdetails/${_id}`}>
                             <button className="btn bg-[#219C90] text-white">Details</button>

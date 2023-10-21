@@ -11,7 +11,7 @@ Currently, two official plugins are available:
 
 - This website is a Fashion and Apparel based website.
 - There are 6 brands.
-- Clicking each brand show the user all available products .
+- Clicking each brand show the user all available products of that brands .
 - Click in the details button user can see all the details information of that products.
 - user can add the product in the cart from details page.
 - user can add add products in the add product page.
@@ -22,4 +22,4 @@ Currently, two official plugins are available:
  
 
 
-[Visit Live Link](https://elysian-wardrobe.web.app)
+[Visit Live Link](https://elysian-wardrobe.web.app/)
