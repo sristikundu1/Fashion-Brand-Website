@@ -1,6 +1,9 @@
 
 
 const Banner = () => {
+
+   
+
     return (
         <div>
             <div className="carousel w-full h-[650px]">

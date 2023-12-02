@@ -21,7 +21,7 @@ const NavBar = () => {
     }
 
     const navLinks = <>
-        <ul className="flex gap-9 text-lg font-semibold">
+        <ul className="flex gap-9 text-lg font-semibold" >
             <li>
                 <NavLink
                     to="/"

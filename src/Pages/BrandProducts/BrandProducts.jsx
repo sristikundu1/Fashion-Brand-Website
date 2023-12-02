@@ -6,7 +6,7 @@ const BrandProducts = () => {
     const products = useLoaderData()
     return (
         <div>
-           
+
 
             <div className="carousel w-full h-[600px]">
                 <div id="item1" className="carousel-item w-full">
@@ -30,10 +30,20 @@ const BrandProducts = () => {
             </div>
             <div className="grid grid-cols-1 ml-6 md:grid-cols-2 gap-5 md:ml-1 lg:grid-cols-2 lg:ml-48  mt-9 max-w-6xl mx-auto">
                 {
-                   products.length && products?.map(product =><BrandProductsCard
-                        key={product._id}
-                        product={product}
-                    ></BrandProductsCard>)
+
+                    products.length ? (
+                        products.map(product => (
+                            <BrandProductsCard
+                                key={product._id}
+                                product={product}
+                            ></BrandProductsCard>
+                        ))
+                    ) : (
+                        <div className="flex justify-center items-center my-14 w-96 ml-72">
+                            <img src="https://klkart.in/apps/uploads/specials/no_product_found.jpg" alt="No products available" />
+                        </div>
+                    )
+
                 }
             </div>
         </div>
