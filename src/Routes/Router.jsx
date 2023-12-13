@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register";
 import BrandProducts from "../Pages/BrandProducts/BrandProducts";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import DetailedProduct from "../Pages/DetailedProduct/DetailedProduct";
+import Review from "../Pages/Reviews/Review";
 
 
 const Router = createBrowserRouter([
@@ -30,19 +31,26 @@ const Router = createBrowserRouter([
             {
                 path: "products/updateproduct/:id",
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/updateproduct/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-brand-swart.vercel.app/products/updateproduct/${params.id}`)
             },
             {
                 path: "products/productdetails/:id",
                 element:<PrivateRoutes><DetailedProduct></DetailedProduct></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/productdetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-brand-swart.vercel.app/products/productdetails/${params.id}`)
             },
             {
                 path: "/mycart",
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch("https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/wishproducts")
+                loader: () => fetch("https://new-brand-swart.vercel.app/wishproducts")
 
             },
+            {
+                path: "/review",
+                element: <PrivateRoutes><Review></Review></PrivateRoutes>,
+                loader: () => fetch("https://new-brand-swart.vercel.app/reviews")
+
+            },
+
             {
                 path: "/login",
                 element: <LogIn></LogIn>
@@ -55,7 +63,7 @@ const Router = createBrowserRouter([
                 // path: "/brandproducts",
                 path:"/brandproducts/:brandName",
                 element: <BrandProducts></BrandProducts>,
-                loader:({params}) => fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products/${params.brandName}`)
+                loader:({params}) => fetch(`https://new-brand-swart.vercel.app/products/${params.brandName}`)
                 // loader: () => fetch("https://new-brand-swart.vercel.app/products")
             }
         ]

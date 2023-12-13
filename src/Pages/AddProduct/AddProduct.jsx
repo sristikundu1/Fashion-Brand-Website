@@ -23,7 +23,7 @@ const AddProduct = () => {
 
         //data send in the server
 
-        fetch("https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/products", {
+        fetch("https://new-brand-swart.vercel.app/products", {
             method: 'POST',
             headers: {
                 'content-type': "application/json"

@@ -1,6 +1,46 @@
+
 import { BsFacebook, BsInstagram, BsPinterest, BsTwitter } from "react-icons/bs";
+import Swal from "sweetalert2";
 
 const Footer = () => {
+
+    const handleSubscribe = e => {
+        e.preventDefault();
+
+        const form = e.target;
+       
+      
+        const email = form.email.value;
+
+
+        const userEmail = { email };
+        console.log(userEmail);
+
+        //data send in the server
+
+        fetch("https://new-brand-swart.vercel.app/send-email", {
+            method: 'POST',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(userEmail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Inside post response", data);
+                if (data.success) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'Thank You For Your subscription',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+
+                }
+                form.reset();
+            })
+    };
+
     return (
         <div>
             <footer className="footer p-10 bg-[#8BCFCC] text-base-content font-semibold">
@@ -24,15 +64,16 @@ const Footer = () => {
                     <a className="link link-hover text-[#FFFFDD]">Privacy policy</a>
                     <a className="link link-hover text-[#FFFFDD]">Cookie policy</a>
                 </nav>
-                <form>
+                <form onSubmit={handleSubscribe}>
                     <header className="footer-title text-[#004225]">Newsletter</header>
                     <fieldset className="form-control w-80">
                         <label className="label">
                             <span className="label-text text-[#FFFFDD]">Enter your email address</span>
                         </label>
                         <div className="relative">
-                            <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
-                            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none bg-[#016A70]">Subscribe</button>
+                            <input type="email" placeholder="username@email.com" name="email" className="input input-bordered w-full pr-16" required/>
+                            {/* <button  type="submit" className="btn btn-primary absolute top-0 right-0 rounded-l-none bg-[#016A70]">Subscribe</button> */}
+                            <input className="btn btn-primary absolute top-0 right-0 rounded-l-none bg-[#016A70]"type="submit" value="Subscribe" />
                         </div>
                     </fieldset>
                 </form>

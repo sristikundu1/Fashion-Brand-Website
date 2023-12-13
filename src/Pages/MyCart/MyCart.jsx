@@ -23,7 +23,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/wishproducts/${_id}`, {
+                fetch(`https://new-brand-swart.vercel.app/wishproducts/${_id}`, {
                     method: 'DELETE'
 
                 })
@@ -60,9 +60,9 @@ const MyCart = () => {
                         <tr>
                             
                             <th>Product</th>
-                            <th>Product Name,Size,Colore</th>
-                            <th></th>
-                            <th></th>
+                            <th>Product Name</th>
+                            <th>Size</th>
+                            <th>Colore</th>
                             <th>Price</th>
                             <th>Brand Name</th>
                             <th>Type</th>

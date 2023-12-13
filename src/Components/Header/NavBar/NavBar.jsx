@@ -52,6 +52,16 @@ const NavBar = () => {
                     My Cart
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to="/review"
+                    className={({ isActive, isPending }) =>
+                        isPending ? "pending " : isActive ? "text-[#C64756] bg-[#F6C7C7] italic" : ''
+                    }
+                >
+                   Reviews
+                </NavLink>
+            </li>
         </ul>
 
         {/* <NavLink className="mr-9 text-lg font-semibold" to="/">Home</NavLink> */}

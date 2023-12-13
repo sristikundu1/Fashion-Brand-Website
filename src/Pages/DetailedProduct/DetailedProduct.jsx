@@ -3,10 +3,11 @@ import { useLoaderData } from "react-router-dom";
 import { BsFacebook, BsTwitter, BsLinkedin, BsInstagram, BsFillCartFill, BsClockFill, BsTruck, BsTruckFrontFill, BsStarFill } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
 
 const DetailedProduct = () => {
 
-
+    const { user } = useAuth();
     const [selectedSize, setSelectedSize] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
 
@@ -48,12 +49,12 @@ const DetailedProduct = () => {
         const Colour = document.getElementById('colour').textContent;
         const Type = document.getElementById('type').textContent;
 
-        const cartProduct = { Photo,Name, BrandName, Price, Size, Colour, Type };
+        const cartProduct = { Photo, Name, BrandName, Price, Size, Colour, Type };
         console.log(cartProduct);
 
-         //data send in the server
+        //data send in the server
 
-         fetch("https://new-brand-2no4d40p9-sristikundu2468-gmailcom.vercel.app/wishproducts", {
+        fetch("https://new-brand-swart.vercel.app/wishproducts", {
             method: 'POST',
             headers: {
                 'content-type': "application/json"
@@ -70,7 +71,45 @@ const DetailedProduct = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     })
-                    
+
+                }
+            })
+
+    };
+    const handleAddReview = e => {
+        e.preventDefault();
+
+        const form = e.target;
+       
+        const Product = document.getElementById('title').textContent;
+        const review = form.review.value;
+        const userName = form.name.value;
+        const userEmail = form.email.value;
+
+
+        const reviewProduct = { Product, review, userName, userEmail };
+        console.log(reviewProduct);
+
+        //data send in the server
+
+        fetch("https://new-brand-swart.vercel.app/reviews", {
+            method: 'POST',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(reviewProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("Inside post response", data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'Thank You For Your Review',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+
                 }
             })
 
@@ -79,9 +118,9 @@ const DetailedProduct = () => {
         <div>
             <div className="flex flex-col md:flex md:flex-col lg:grid grid-cols-5 gap-9 mt-6 ml-5 mr-5">
                 <div className="col-span-3">
-                    <img id="photo" className=" w-[800px] h-full" src={photo} alt="" />
+                    <img id="photo" className=" w-[780px] h-full" src={photo} alt="" />
                 </div>
-                <div className=" w-[380px] ml-3 md:w-[600px] md:ml-14 lg:w-[500px] space-y-4">
+                <div className=" w-[380px] ml-3 md:w-[600px] md:ml-14 lg:w-[450px] space-y-4">
                     <h2 id="name" className="text-5xl text-[#285430]  font-courgette my-6">{name}</h2>
                     <h2 className="text-2xl text-[#3D5656]  font-bold">Brand Of : <span id="brandName">{brandName}</span> </h2>
                     <p className="font-medium  text-[#E7B10A] text-xl">Price: <span id="price">{price}</span> </p>
@@ -146,35 +185,38 @@ const DetailedProduct = () => {
             </div>
 
             <div className="mt-16 bg-[#F9F8EB] p-5">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl text-[#672F2F] text-center h-14 border pt-3 font-courgette mb-9 bg-[#99B19C]">Reviews</h2>
-                    <p className="font-bold text-xl mb-3 text-[#285430]">Give Your Valuable Review for {name}</p>
-                    <p className="font-medium">It has already {rating} rating</p>
+                <form onSubmit={handleAddReview}>
+
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-3xl text-[#672F2F] text-center h-14 border pt-3 font-courgette mb-9 bg-[#99B19C]">Reviews</h2>
+                        <p className="font-bold text-xl mb-3 text-[#285430]" >Give Your Valuable Review for <span id="title">{name}</span> </p>
+                        <p className="font-medium">It has already {rating} rating</p>
 
 
-                    <div>
-                        <label className="label">
-                            <span className="label-text font-bold text-xl text-[#CBB279]">Review</span>
-                        </label>
-                        <textarea className="w-96 md:w-[700px] lg:w-[1160px] border p-3  outline-none border-b-4 rounded" name="review" placeholder="Write Your Review" id="" cols="150" rows="5" required></textarea>
-                    </div>
-                    <div className="lg:flex gap-4  mb-3">
-                        <div className="form-control w-full lg:w-1/2 ">
+                        <div>
                             <label className="label">
-                                <span className="label-text font-semibold text-xl text-[#CBB279]">Name</span>
+                                <span id="review" className="label-text font-bold text-xl text-[#CBB279]">Review</span>
                             </label>
-                            <input type="text" name="name" placeholder="Enter your name" className=" outline-none border-b-4 input input-bordered w-full " />
+                            <textarea className="w-96 md:w-[700px] lg:w-[1160px] border p-3  outline-none border-b-4 rounded" name="review" placeholder="Write Your Review" id="" cols="150" rows="5" required></textarea>
                         </div>
-                        <div className="form-control w-full lg:w-1/2 ">
-                            <label className="label">
-                                <span className="label-text font-semibold text-xl text-[#CBB279]">Email</span>
-                            </label>
-                            <input type="email" name="email" placeholder="Enter your email" className="outline-none border-b-4 input input-bordered w-full" />
-                        </div>
+                        <div className="lg:flex gap-4  mb-3">
+                            <div className="form-control w-full lg:w-1/2 ">
+                                <label className="label">
+                                    <span className="label-text font-semibold text-xl text-[#CBB279]">Name</span>
+                                </label>
+                                <input type="text" name="name" id="usename" defaultValue={user?.displayName} placeholder="Enter your name" className=" outline-none border-b-4 input input-bordered w-full " />
+                            </div>
+                            <div className="form-control w-full lg:w-1/2 ">
+                                <label className="label">
+                                    <span className="label-text font-semibold text-xl text-[#CBB279]">Email</span>
+                                </label>
+                                <input type="email" name="email" id="useremail" defaultValue={user?.email} placeholder="Enter your email" className="outline-none border-b-4 input input-bordered w-full" />
+                            </div>
 
+                        </div>
+                        <input className="btn mt-9 font-courgette bg-[#D8EBB5]  text-[#2C786C] " type="submit" value="Submit" />
                     </div>
-                    <input className="btn mt-9 font-courgette bg-[#D8EBB5]  text-[#2C786C] " type="submit" value="Submit" />
-                </div>
+                </form>
             </div>
 
             <div className="mt-16 bg-[#F9F8EB] p-5 pb-12 pt-6">
